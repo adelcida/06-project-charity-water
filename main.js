@@ -260,6 +260,7 @@ $('btn-collect').addEventListener('click', collectWater);
 $('btn-deliver').addEventListener('click', deliverWater);
 $('btn-continue').addEventListener('click', continueGame);
 $('btn-reset').addEventListener('click', resetGame);
+$('main-reset-button').addEventListener('click', resetGame);
 
 document.querySelectorAll('.well-upgrade-btn').forEach(btn => {
   btn.onclick = () => upgradeWell(Number(btn.closest('[data-id]').dataset.id));
