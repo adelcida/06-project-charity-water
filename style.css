@@ -602,3 +602,135 @@ body { font-family: 'Barlow', sans-serif; background: #FFF7E1; color: #1A1A1A; }
   text-align: center;
   display: block;
 }
+
+
+/* ══════════════════════════════════════════════════════
+   TABLET & MOBILE  (≤ 768px)
+   The 3-column desktop layout becomes a single-column
+   tab-based layout. A fixed bottom tab bar replaces the
+   side panels — Jerry Can | Wellfield | Delivery.
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Score bar ── */
+  .score-bar {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  /* Hide the wordmark on small screens — saves horizontal space */
+  .score-wordmark { display: none; }
+  /* Stats wrap into a 2×2 grid */
+  .score-stats { gap: 0; display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+  .score-stat  { padding: 6px 10px; border-right: 1px solid rgba(255,255,255,0.08); }
+  .score-stat:nth-child(2n) { border-right: none; }
+  .score-stat-label { font-size: 9px; }
+  .score-stat-value { font-size: 18px; margin-top: 1px; }
+  /* menu button full width above the stats */
+  .menu-btn { width: 100%; text-align: left; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+  /* ── Conversion bar ── */
+  .conversion-bar { padding: 7px 14px; }
+  .conversion-bar span { font-size: 11px; }
+
+  /* ── Game grid becomes single stacked column ── */
+  .game-grid {
+    grid-template-columns: 1fr;
+    padding: 10px 10px 80px; /* bottom padding = room for tab bar */
+    gap: 0;
+  }
+
+  /* Each panel is a "tab pane" — hidden by default, shown when its tab is active */
+  .game-grid > .panel,
+  .game-grid > .wellfield-col {
+    display: none;
+    min-height: calc(100vh - 180px); /* fill the viewport */
+  }
+  .game-grid > .panel.tab-active,
+  .game-grid > .wellfield-col.tab-active {
+    display: flex;
+  }
+
+  /* Jerry Can panel — shrink the can image on mobile */
+  .jerry-body img { width: 100px; height: 100px; }
+  .jerry-litres .big { font-size: 26px; }
+
+  /* Well grid — 2 columns instead of 3 on mobile */
+  .well-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+  .well-card { min-height: 140px; }
+
+  /* Quick facts — smaller text */
+  .facts-stat { font-size: 20px; }
+  .facts-body { font-size: 13px; }
+  .facts-strip { padding: 12px 14px; gap: 10px; }
+  .facts-divider { height: 32px; }
+
+  /* Hide level legend on small screens — saves space */
+  .level-legend { display: none; }
+
+  /* Title screen wordmark — smaller on phones */
+  .title-wordmark-text { font-size: 26px; }
+  .title-wordmark img  { width: 44px; height: 44px; }
+
+  /* Modal — full width on mobile */
+  .modal-card { border-radius: 12px; }
+  .modal-header { padding: 20px 20px 16px; }
+  .modal-body   { padding: 20px 20px 24px; gap: 16px; }
+  .modal-title  { font-size: 22px; }
+}
+
+/* ── Bottom tab bar (mobile only) ────────────────────────────────────── */
+.tab-bar {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .tab-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 64px;
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 12px rgba(0,51,102,0.08);
+    z-index: 40;
+  }
+  .tab-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--cw-gray);
+    padding-bottom: 6px; /* nudge up from home indicator */
+    transition: color 0.2s;
+  }
+  .tab-btn.active {
+    color: var(--cw-navy);
+  }
+  .tab-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+  /* Yellow dot under the active tab label */
+  .tab-btn::after {
+    content: '';
+    display: block;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .tab-btn.active::after {
+    background: var(--cw-yellow);
+  }
+}

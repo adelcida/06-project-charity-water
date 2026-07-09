@@ -132,7 +132,7 @@
   <div class="game-grid">
 
     <!-- ── LEFT PANEL — Jerry Can (water pickup) ────────────────── -->
-    <div class="panel" style="border: 1px solid rgba(119,168,187,0.4); position: relative;">
+    <div id="panel-jerry" class="panel tab-active" style="border: 1px solid rgba(119,168,187,0.4); position: relative;">
       <div class="panel-header">
         <span class="panel-title">Jerry Can</span>
         <span class="pill" style="background:rgba(119,168,187,0.15); color:var(--cw-steel);">pickup</span>
@@ -196,7 +196,7 @@
 
 
     <!-- ── CENTRE — Wellfield ────────────────────────────────────── -->
-    <div class="wellfield-col">
+    <div id="panel-wells" class="wellfield-col">
 
       <!-- Wellfield header -->
       <div class="wellfield-header">
@@ -345,7 +345,7 @@
 
 
     <!-- ── RIGHT PANEL — Delivery ────────────────────────────────── -->
-    <div class="panel delivery-panel">
+    <div id="panel-delivery" class="panel delivery-panel">
       <div class="panel-header">
         <span class="panel-title">Delivery</span>
         <span class="pill" style="background:rgba(191,108,70,0.1); color:var(--cw-terra);">drop-off</span>
@@ -417,6 +417,46 @@
     </div><!-- /right panel -->
 
   </div><!-- /game-grid -->
+  <!-- ── Mobile tab bar ──────────────────────────────────────────────────
+       Hidden on desktop (display:none in style.css).
+       Shown at ≤768px. JS switches .tab-active between the three panels
+       and .active between these buttons when a tab is tapped.
+  ──────────────────────────────────────────────────────────────────── -->
+  <div class="tab-bar" id="tab-bar">
+
+    <button class="tab-btn active" data-tab="panel-jerry">
+      <!-- Jerry Can icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="7" width="13" height="14" rx="2"/>
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+        <line x1="9" y1="12" x2="15" y2="18"/>
+        <line x1="15" y1="12" x2="9" y2="18"/>
+      </svg>
+      Jerry Can
+    </button>
+
+    <button class="tab-btn" data-tab="panel-wells">
+      <!-- Wellfield icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/>
+        <rect x="14" y="14" width="7" height="7" rx="1"/>
+      </svg>
+      Wellfield
+    </button>
+
+    <button class="tab-btn" data-tab="panel-delivery">
+      <!-- Person/delivery icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="6" r="3"/>
+        <path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+      </svg>
+      Delivery
+    </button>
+
+  </div><!-- /tab-bar -->
+
 
   <div class="bottom-stripe"></div>
 </div><!-- /screen-game -->

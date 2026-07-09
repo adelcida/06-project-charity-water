@@ -269,3 +269,20 @@ document.querySelectorAll('.well-upgrade-btn').forEach(btn => {
 // ── Boot ─────────────────────────────────────────────────────────────────────
 updateFacts();
 showTitle();
+// ── Mobile tab switching ──────────────────────────────────────────────────
+// Only runs on small screens where the tab bar is visible.
+// Clicking a tab button shows its panel and hides the others.
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.dataset.tab;
+
+    // Switch active panel
+    document.querySelectorAll('#panel-jerry, #panel-wells, #panel-delivery').forEach(panel => {
+      panel.classList.toggle('tab-active', panel.id === targetId);
+    });
+
+    // Switch active tab button
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
