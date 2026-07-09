@@ -161,6 +161,14 @@ body { font-family: 'Barlow', sans-serif; background: #FFF7E1; color: #1A1A1A; }
   border: none;
   cursor: pointer;
 }
+.main-reset {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  background: red;
+  border: round;
+  cursor: pointer;
+}
 .score-stats { display: flex; align-items: center; gap: 28px; }
 .score-stat  { text-align: center; }
 .score-stat-label { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; }
@@ -555,6 +563,19 @@ body { font-family: 'Barlow', sans-serif; background: #FFF7E1; color: #1A1A1A; }
   border-radius: 6px;
   cursor: pointer;
   box-shadow: 0 3px 0 var(--cw-terra);
+  width: 100%;
+}
+.main-reset-button{
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 13px;
+  background: #990000;
+  color: var(--cw-navy);
+  border: 2px solid var(--cw-navy);
+  border-radius: 6px;
+  cursor: pointer;
   width: 100%;
 }
 .btn-reset {

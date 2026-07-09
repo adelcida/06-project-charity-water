@@ -1,0 +1,44 @@
+<!-- ══════════════════════════════════════════════════════
+  well-handpump.svg — Level 2: Hand Pump
+  A mechanical pump: concrete base, vertical pipe,
+  pump head housing, lever arm with knob, and outlet spout.
+  Colours:
+    #FFF7E1 (cream)  — concrete base pad
+    #CBCCD1 (gray)   — vertical pipe
+    #77A8BB (steel)  — pump head housing
+    #FFC907 (yellow) — handle knob accent
+    #003366 (navy)   — all outlines and lever/spout lines
+  ViewBox: 0 0 56 56
+══════════════════════════════════════════════════════ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="64" height="64" viewBox="0 0 56 56" fill="none">
+
+  <!-- Concrete base pad -->
+  <rect x="8" y="42" width="38" height="12" rx="2"
+    fill="#FFF7E1" stroke="#003366" stroke-width="1.5"/>
+
+  <!-- Vertical pipe going into the ground -->
+  <rect x="24" y="18" width="8" height="28" rx="2"
+    fill="#CBCCD1" stroke="#003366" stroke-width="1.5"/>
+
+  <!-- Pump head housing — the boxy part you push the lever on -->
+  <rect x="14" y="12" width="26" height="12" rx="4"
+    fill="#77A8BB" stroke="#003366" stroke-width="1.5"/>
+
+  <!-- Lever arm extending right from the pump head -->
+  <path d="M40 20 L52 12"
+    stroke="#003366" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Handle knob at end of lever — yellow brand accent -->
+  <circle cx="52" cy="11" r="4"
+    fill="#FFC907" stroke="#003366" stroke-width="1.5"/>
+
+  <!-- Outlet pipe going left and angling down -->
+  <path d="M14 22 L5 30"
+    stroke="#003366" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Spout opening — small ellipse at end of outlet pipe -->
+  <ellipse cx="5" cy="35" rx="4" ry="5"
+    fill="#77A8BB" stroke="#003366" stroke-width="1.5"/>
+
+</svg>

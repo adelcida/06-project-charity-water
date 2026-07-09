@@ -1,0 +1,39 @@
+<!-- ══════════════════════════════════════════════════════
+  well-basic.svg — Level 1: Basic Well
+  A simple bucket-style well with wooden frame and water basin.
+  Colours:
+    #FFF7E1 (cream)  — basin body / background
+    #77A8BB (steel)  — water surface ellipses
+    #BF6C46 (terra)  — wooden support posts
+    #7A3B10          — darker crossbeam at top
+    #003366 (navy)   — all outlines/strokes
+  ViewBox: 0 0 56 56
+══════════════════════════════════════════════════════ -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="64" height="64" viewBox="0 0 56 56" fill="none">
+
+  <!-- Basin base — cream rectangle, slightly taller on right -->
+  <rect x="12" y="34" width="32" height="18" rx="2"
+    fill="#FFF7E1" stroke="#003366" stroke-width="1.5"/>
+
+  <!-- Water surface — larger ellipse gives a 3D "looking into basin" feel -->
+  <ellipse cx="28" cy="34" rx="16" ry="6"
+    fill="#77A8BB" stroke="#003366" stroke-width="1.5"/>
+
+  <!-- Water sheen — slightly smaller, semi-transparent ellipse -->
+  <ellipse cx="28" cy="33" rx="13" ry="4.5"
+    fill="#77A8BB" opacity="0.7"/>
+
+  <!-- Left wooden support post -->
+  <rect x="13" y="12" width="5" height="24"
+    fill="#BF6C46" stroke="#003366" stroke-width="1"/>
+
+  <!-- Right wooden support post -->
+  <rect x="38" y="12" width="5" height="24"
+    fill="#BF6C46" stroke="#003366" stroke-width="1"/>
+
+  <!-- Top crossbeam — wider and darker than the posts -->
+  <rect x="11" y="9" width="34" height="6" rx="2"
+    fill="#7A3B10" stroke="#003366" stroke-width="1"/>
+
+</svg>
